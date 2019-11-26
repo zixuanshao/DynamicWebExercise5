@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      
       <Router>
         <Route exact path="/" component={UserProfile} />
         <Route exact path="/login" component={Login} />
