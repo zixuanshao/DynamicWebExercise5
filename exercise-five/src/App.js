@@ -4,8 +4,8 @@ import './App.css';
 
 import Login from './pages/Login/index'
 import UserProfile from './pages/UserProfile/index'
-import Signup from './pages/Signup'
-import Logout from '.pages/Logout'
+import Signup from './pages/Signup/index'
+import Logout from './pages/Logout/index'
 
 
 function App() {
