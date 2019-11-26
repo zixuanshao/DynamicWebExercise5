@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Login(){
+export default function LoginForm(){
     return <div>
         <form>
             <label for="loginEmail"> Email </label>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import {UserInformation} from "../../components/LoginForm"
+import {UserInformation} from "../../components/UserProfileComponents"
 
 export default function UserProfile(){
     return <div>
