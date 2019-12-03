@@ -24,6 +24,7 @@ var firebaseConfig = {
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     //initialize firebase
@@ -45,9 +46,11 @@ function App() {
       .onAuthStateChanged(function(user){
         if (user) {
           setLoggedIn(true);
+          setUser(user);
         }else{
           //No user is signed in
           setLoggedIn(false);
+          setUser({});
         }
       });
   },[])
@@ -75,7 +78,7 @@ function App() {
     e.preventDefault();
 
     let email = e.currentTarget.loginEmail.value;
-    let password = e.currentTarget.loginEmail.value;
+    let password = e.currentTarget.loginPassword.value;
 
     firebase
       .auth()
@@ -86,6 +89,8 @@ function App() {
       .catch(function(error) {
         console.log('error', error);
     });
+
+    console.log(password);
   }
 
   function logoutFunction (e) {
@@ -106,7 +111,7 @@ function App() {
 
       <Router>
         <Route exact path="/" > 
-            {loggedIn ? <UserProfile /> : <Redirect to ="/login" /> }
+            {loggedIn ? <UserProfile user={user}/> : <Redirect to ="/login" /> }
         </Route>
         <Route exact path="/signup" > 
             {loggedIn ? <Redirect to ="/" /> : < Signup signupFunction={signupFunction}/> }
