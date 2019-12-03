@@ -1,5 +1,8 @@
 import React from "react";
 
-export default function UserInformation(){
-    return <div>user info</div>
+export default function UserInformation({email}){
+    return <div>
+        <h2>hello, {email}</h2>
+        <p>user info</p> 
+    </div>
 }
