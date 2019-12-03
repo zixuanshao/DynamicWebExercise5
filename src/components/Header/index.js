@@ -1,13 +1,14 @@
 import React from 'react';
 
-export default function Header(){
+export default function Header({loggedIn, logoutFunction}){
     return(
         <header className="Header">
             <nav>
-                <a href="/">Home</a>
-                <a href="/login">Login</a>
-                <a href="/logout">Logout</a>
-                <a href="/signup">Signup</a>
+                {loggedIn && <a href="/">Home</a>}
+                {!loggedIn && <a href="/login">Login</a>}
+                {!loggedIn && <a href="/signup">Signup</a>}
+
+                {loggedIn && <a onClick={()=> logoutFunction()}> Logout</a>}
             </nav>
         </header>
     )

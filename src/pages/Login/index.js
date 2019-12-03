@@ -1,15 +1,11 @@
 import React from "react";
 import LoginForm from '../../components/LoginForm/index';
 
-export default function Login(){
-    function submitFunction(e){
-        console.log(e);
-    }
-
+export default function Login({loginFunction}){
     return (
         <div>
             <div>Login</div>
-            <LoginForm submitFunction={submitFunction} />
+            <LoginForm submitFunction={loginFunction} />
         </div>
     )
 }
